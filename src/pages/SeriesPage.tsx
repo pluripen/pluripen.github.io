@@ -8,7 +8,7 @@ import { SERIES, type SeriesKey } from '../publications/series'
 function volumeSortKey(v: PublicationVolume): number {
   const raw = v.volume || ''
   const m = raw.match(/\d+/)
-  return m ? Number(m[0]) : -1
+  return m ? Number(m[0]) : Number.POSITIVE_INFINITY
 }
 
 export function SeriesPage() {
@@ -27,7 +27,10 @@ export function SeriesPage() {
 
   const volumes: PublicationVolume[] =
     seriesKey === 'PLURIPEN' ? [] : publicationsManifest.volumes.filter((v) => v.series === seriesKey).slice()
-  volumes.sort((a, b) => volumeSortKey(b) - volumeSortKey(a))
+  volumes.sort((a, b) => {
+    const n = volumeSortKey(a) - volumeSortKey(b)
+    return n !== 0 ? n : a.id.localeCompare(b.id)
+  })
 
   return (
     <Box>
@@ -65,14 +68,7 @@ export function SeriesPage() {
         {series.description}
       </Text>
 
-      <Box borderTop="1px solid black" borderBottom="1px solid black" py={6}>
-        <Text
-          fontSize={isMobile ? 'var(--section-title-size-mobile)' : 'var(--section-title-size)'}
-          marginLeft={isMobile ? 'var(--content-margin-left-mobile)' : 'var(--content-margin-left)'}
-          marginBottom={4}
-        >
-          Bände
-        </Text>
+      <Box borderBottom="1px solid black" py={6}>
         <PublicationVolumeAccordion volumes={volumes} />
       </Box>
     </Box>

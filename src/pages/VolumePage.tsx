@@ -49,13 +49,19 @@ export function VolumePage() {
       </Flex>
 
       <Box
-        borderTop="1px solid black"
         borderBottom="1px solid black"
         py={6}
         px={isMobile ? 'var(--page-padding-mobile)' : 'var(--page-padding-left)'}
       >
         <Flex direction={isMobile ? 'column' : 'row'} gap={10} align="flex-start">
-          <Box flex="0 0 520px" maxW="100%">
+          <Box flex="1" minW={0} order={isMobile ? 1 : 0}>
+            <Text fontWeight="bold" mb={2}>
+              Abstract
+            </Text>
+            <DocxViewer docxUrl={volume.abstractDocx} showDownloadLink={false} />
+          </Box>
+
+          <Box flex="0 0 520px" maxW="100%" order={isMobile ? 0 : 1}>
             <Text fontWeight="bold" mb={2}>
               Cover
             </Text>
@@ -71,15 +77,7 @@ export function VolumePage() {
                 Cover (PDF) öffnen
               </Link>
             </Box>
-          </Box>
-
-          <Box flex="1" minW={0}>
-            <Text fontWeight="bold" mb={2}>
-              Abstract
-            </Text>
-            <DocxViewer docxUrl={volume.abstractDocx} />
-
-            <Box mt={8}>
+            <Box mt={6}>
               <Text fontWeight="bold" mb={2}>
                 Download
               </Text>

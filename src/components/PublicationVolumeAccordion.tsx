@@ -70,7 +70,14 @@ export function PublicationVolumeAccordion({ volumes }: Props) {
               marginLeft={isMobile ? 'var(--content-margin-left-mobile)' : 'var(--content-margin-left)'}
               marginRight={isMobile ? 'var(--page-padding-mobile)' : 'var(--page-padding-right)'}
             >
-              <Box flex="0 0 360px" maxW="100%">
+              <Box flex="1" minW={0} order={isMobile ? 1 : 0}>
+                <Text fontWeight="bold" mb={2}>
+                  Abstract
+                </Text>
+                <DocxViewer docxUrl={v.abstractDocx} showDownloadLink={false} />
+              </Box>
+
+              <Box flex="0 0 360px" maxW="100%" order={isMobile ? 0 : 1}>
                 <Text fontWeight="bold" mb={2}>
                   Cover
                 </Text>
@@ -94,15 +101,7 @@ export function PublicationVolumeAccordion({ volumes }: Props) {
                     Cover (PDF) öffnen
                   </Link>
                 </Box>
-              </Box>
-
-              <Box flex="1" minW={0}>
-                <Text fontWeight="bold" mb={2}>
-                  Abstract
-                </Text>
-                <DocxViewer docxUrl={v.abstractDocx} />
-
-                <Box mt={8}>
+                <Box mt={6}>
                   <Text fontWeight="bold" mb={2}>
                     Download
                   </Text>

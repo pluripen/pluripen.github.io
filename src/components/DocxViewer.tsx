@@ -6,9 +6,14 @@ import mammoth from 'mammoth'
 type Props = {
   docxUrl: string
   downloadLabel?: string
+  showDownloadLink?: boolean
 }
 
-export function DocxViewer({ docxUrl, downloadLabel = 'Abstract (DOCX) herunterladen' }: Props) {
+export function DocxViewer({
+  docxUrl,
+  downloadLabel = 'Abstract (DOCX) herunterladen',
+  showDownloadLink = true,
+}: Props) {
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [html, setHtml] = useState<string>('')
@@ -45,11 +50,13 @@ export function DocxViewer({ docxUrl, downloadLabel = 'Abstract (DOCX) herunterl
 
   return (
     <Box>
-      <Box mb={3}>
-        <Link href={docxUrl} isExternal color="var(--romani-blue)">
-          {downloadLabel}
-        </Link>
-      </Box>
+      {showDownloadLink ? (
+        <Box mb={3}>
+          <Link href={docxUrl} isExternal color="var(--romani-blue)">
+            {downloadLabel}
+          </Link>
+        </Box>
+      ) : null}
       {isLoading ? (
         <Text color="blackAlpha.700">Abstract wird geladen…</Text>
       ) : error ? (
