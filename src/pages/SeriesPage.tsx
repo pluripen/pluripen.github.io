@@ -34,41 +34,45 @@ export function SeriesPage() {
 
   return (
     <Box>
-      <Flex
-        direction={isMobile ? 'column' : 'row'}
-        align={isMobile ? 'flex-start' : 'baseline'}
-        justify="space-between"
-        marginLeft={isMobile ? 'var(--content-margin-left-mobile)' : 'var(--content-margin-left)'}
-        marginRight={isMobile ? 'var(--page-padding-mobile)' : 'var(--page-padding-right)'}
-        marginTop={isMobile ? 8 : 10}
-        marginBottom={isMobile ? 3 : 4}
-        gap={isMobile ? 1 : 6}
+      <Box
+        backgroundImage={`url(${series.coverImage})`}
+        backgroundSize="cover"
+        backgroundPosition="center"
+        backgroundRepeat="no-repeat"
+        py={isMobile ? 6 : 10}
       >
-        <Text fontSize={isMobile ? '34px' : '42px'} color="black" lineHeight="1.05" m={0}>
-          {series.title}
-        </Text>
-        <Text
-          fontSize={isMobile ? '34px' : '42px'}
-          lineHeight="1.05"
-          m={0}
-          alignSelf={isMobile ? 'flex-end' : 'auto'}
+        <Box
+          marginLeft={isMobile ? 'var(--content-margin-left-mobile)' : 'var(--content-margin-left)'}
+          marginRight={isMobile ? 'var(--page-padding-mobile)' : 'var(--page-padding-right)'}
+          maxWidth="980px"
+          px={isMobile ? 4 : 6}
+          py={isMobile ? 4 : 6}
         >
-          {series.shortName}
-        </Text>
-      </Flex>
+          <Flex
+            direction={isMobile ? 'column' : 'row'}
+            align={isMobile ? 'flex-start' : 'baseline'}
+            justify="space-between"
+            marginTop={0}
+            marginBottom={isMobile ? 2 : 3}
+            gap={isMobile ? 1 : 6}
+          >
+            <Text fontSize={isMobile ? '34px' : '42px'} color="black" lineHeight="1.05" m={0}>
+              {series.title}
+            </Text>
+            {!isMobile ? (
+              <Text fontSize="42px" lineHeight="1.05" m={0}>
+                {series.shortName}
+              </Text>
+            ) : null}
+          </Flex>
 
-      <Text
-        fontSize={isMobile ? '14px' : '16px'}
-        marginLeft={isMobile ? 'var(--content-margin-left-mobile)' : 'var(--content-margin-left)'}
-        maxWidth="900px"
-        paddingRight="40px"
-        paddingBottom={isMobile ? 4 : 6}
-        lineHeight="1.4"
-      >
-        {series.description}
-      </Text>
+          <Text fontSize={isMobile ? '14px' : '16px'} maxWidth="900px" lineHeight="1.4" m={0}>
+            {series.description}
+          </Text>
+        </Box>
+      </Box>
 
-      <Box borderBottom="1px solid black" py={6}>
+      <Box borderBottom="1px solid black" pt={0} pb={6}>
         <PublicationVolumeAccordion volumes={volumes} />
       </Box>
     </Box>

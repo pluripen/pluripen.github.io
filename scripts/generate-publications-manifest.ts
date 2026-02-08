@@ -3,6 +3,10 @@ import path from 'node:path'
 import process from 'node:process'
 import * as XLSX from 'xlsx'
 
+// `xlsx` is a CJS module. Under ESM (and tsx), the functions are usually under `default`.
+// This keeps the script working across runtimes.
+const XLSXLib: typeof XLSX = ((XLSX as unknown as { default?: typeof XLSX }).default ?? XLSX) as typeof XLSX
+
 type SeriesKey = 'GLM' | 'GPS' | 'GPT' | 'GRP' | 'PLURIPEN'
 
 type PublicationAsset = {
@@ -10,6 +14,8 @@ type PublicationAsset = {
   series: Exclude<SeriesKey, 'PLURIPEN'>
   volume: string
   title: string
+  authors?: string
+  year?: number
   coverPdf: string
   abstractDocx: string
   textPdf?: string
@@ -21,11 +27,7 @@ type Manifest = {
 }
 
 function normalizeHeader(s: string) {
-  return s
-    .toLowerCase()
-    .trim()
-    .replace(/\s+/g, '')
-    .replace(/[_-]+/g, '')
+  return s.toLowerCase().trim().replace(/[^a-z0-9]/g, '')
 }
 
 function parseVolumeFolderName(folderName: string): { series: string; volume: string } | null {
@@ -79,21 +81,29 @@ async function listFiles(dir: string) {
 }
 
 function resolveTitleFromXlsx(
-  titlesById: Map<string, string>,
+  titlesById: Map<string, { title?: string; authors?: string; year?: number }>,
   series: string,
   volume: string,
-): string | undefined {
+): { title?: string; authors?: string; year?: number } | undefined {
   const id = `${series}_${volume}`
   return titlesById.get(id)
 }
 
-function readTitlesFromBooksXlsx(xlsxPath: string): Map<string, string> {
-  const wb = XLSX.readFile(xlsxPath)
+function parseSeriesAndVolumeFromNummer(nummer: string): { series: string; volume: string } | null {
+  const m = /^\s*([A-Z]{3})\s*([0-9]+(?:-[0-9]+)?)\s*$/.exec(nummer.toUpperCase())
+  if (!m) return null
+  return { series: m[1], volume: m[2] }
+}
+
+function readMetadataFromBooksXlsx(
+  xlsxPath: string,
+): Map<string, { title?: string; authors?: string; year?: number }> {
+  const wb = XLSXLib.readFile(xlsxPath)
   const sheetName = wb.SheetNames[0]
   const sheet = wb.Sheets[sheetName]
   if (!sheet) return new Map()
 
-  const rows = XLSX.utils.sheet_to_json<Record<string, unknown>>(sheet, { defval: '' })
+  const rows = XLSXLib.utils.sheet_to_json<Record<string, unknown>>(sheet, { defval: '' })
   if (!rows.length) return new Map()
 
   // Find columns heuristically (German/English variants)
@@ -101,25 +111,38 @@ function readTitlesFromBooksXlsx(xlsxPath: string): Map<string, string> {
   const headerMap = new Map<string, string>()
   for (const h of headers) headerMap.set(normalizeHeader(h), h)
 
-  const seriesHeader =
-    headerMap.get('reihe') ?? headerMap.get('series') ?? headerMap.get('serie') ?? headerMap.get('kurzname')
-  const volumeHeader =
-    headerMap.get('band') ?? headerMap.get('volume') ?? headerMap.get('nummer') ?? headerMap.get('nr')
+  const nummerHeader = headerMap.get('nummer') ?? headerMap.get('number') ?? headerMap.get('no') ?? headerMap.get('nr')
+  const authorsHeader =
+    headerMap.get('autorenbzwherausgebereds') ??
+    headerMap.get('autor') ??
+    headerMap.get('authors') ??
+    headerMap.get('editor') ??
+    headerMap.get('editors')
+  const yearHeader = headerMap.get('jahr') ?? headerMap.get('year')
   const titleHeader =
-    headerMap.get('titel') ?? headerMap.get('title') ?? headerMap.get('buchtitel') ?? headerMap.get('name')
+    headerMap.get('buchtitel') ?? headerMap.get('titel') ?? headerMap.get('title') ?? headerMap.get('name')
 
-  if (!seriesHeader || !volumeHeader || !titleHeader) return new Map()
+  if (!nummerHeader) return new Map()
 
-  const out = new Map<string, string>()
+  const out = new Map<string, { title?: string; authors?: string; year?: number }>()
   for (const row of rows) {
-    const seriesRaw = String(row[seriesHeader] ?? '').trim().toUpperCase()
-    const volRaw = String(row[volumeHeader] ?? '').trim()
-    const titleRaw = String(row[titleHeader] ?? '').trim()
-    if (!seriesRaw || !volRaw || !titleRaw) continue
+    const nummerRaw = String(row[nummerHeader] ?? '').trim()
+    if (!nummerRaw) continue
+    const parsed = parseSeriesAndVolumeFromNummer(nummerRaw)
+    if (!parsed) continue
 
-    const series = seriesRaw
-    const volume = padVolume(volRaw)
-    out.set(`${series}_${volume}`, titleRaw)
+    const series = parsed.series
+    const volume = padVolume(parsed.volume)
+
+    const titleRaw = titleHeader ? String(row[titleHeader] ?? '').trim() : ''
+    const authorsRaw = authorsHeader ? String(row[authorsHeader] ?? '').trim() : ''
+    const yearRaw = yearHeader ? Number(row[yearHeader]) : NaN
+
+    out.set(`${series}_${volume}`, {
+      title: titleRaw || undefined,
+      authors: authorsRaw || undefined,
+      year: Number.isFinite(yearRaw) ? yearRaw : undefined,
+    })
   }
   return out
 }
@@ -133,8 +156,8 @@ async function main() {
     const booksXlsx = path.join(assetsRoot, 'books.xlsx')
     return fs
       .access(booksXlsx)
-      .then(() => readTitlesFromBooksXlsx(booksXlsx))
-      .catch(() => new Map<string, string>())
+      .then(() => readMetadataFromBooksXlsx(booksXlsx))
+      .catch(() => new Map<string, { title?: string; authors?: string; year?: number }>())
   })()
 
   const titles = await titlesById
@@ -172,13 +195,16 @@ async function main() {
       const urlBase = `/assets/${seriesDir}/${volumeDir}`
       const volumePadded = padVolume(volume)
       const id = `${series}_${volumePadded}`
-      const title = resolveTitleFromXlsx(titles, series, volumePadded) ?? `${series} ${volumePadded}`
+      const meta = resolveTitleFromXlsx(titles, series, volumePadded)
+      const title = meta?.title ?? `${series} ${volumePadded}`
 
       volumes.push({
         id,
         series,
         volume: volumePadded,
         title,
+        authors: meta?.authors,
+        year: meta?.year,
         coverPdf: `${urlBase}/${cover}`,
         abstractDocx: `${urlBase}/${abstract}`,
         textPdf: text ? `${urlBase}/${text}` : undefined,

@@ -10,27 +10,25 @@ export function HomePage() {
 
   return (
     <Box>
-      <Text
-        fontSize={isMobile ? '15px' : '18px'}
-        marginLeft={isMobile ? 'var(--content-margin-left-mobile)' : 'var(--content-margin-left)'}
-        marginRight={isMobile ? 'var(--page-padding-mobile)' : 'var(--page-padding-right)'}
-        marginTop={isMobile ? 6 : 8}
-        marginBottom={isMobile ? 4 : 5}
-        lineHeight="1.4"
-      >
-        PLURIPEN ist ein Online-Open-Access-Verlag in Kooperation mit der Akademie Graz.{' '}
-        <Link as={RouterLink} to={routes.publications} color="var(--romani-blue)" _hover={{ textDecoration: 'none' }}>
-          Zu den Publikationen
-        </Link>
-      </Text>
 
       <Text
         fontSize={isMobile ? 'var(--page-title-size-mobile)' : 'var(--page-title-size)'}
         marginLeft={isMobile ? 'var(--content-margin-left-mobile)' : 'var(--content-margin-left)'}
-        marginBottom={isMobile ? 4 : 5}
       >
         PLURIPEN
       </Text>
+
+        <Text
+            fontSize={isMobile ? '15px' : '18px'}
+            marginLeft={isMobile ? 'var(--content-margin-left-mobile)' : 'var(--content-margin-left)'}
+            marginRight={isMobile ? 'var(--page-padding-mobile)' : 'var(--page-padding-right)'}
+            lineHeight="1.4"
+        >
+            PLURIPEN ist ein Online-Open-Access-Verlag in Kooperation mit der Akademie Graz.{' '}
+            <Link as={RouterLink} to={routes.publications} color="var(--romani-blue)" _hover={{ textDecoration: 'none' }}>
+                Zu den Publikationen
+            </Link>
+        </Text>
 
       {/* Simple vertical series list (natural scroll down) */}
       <Box

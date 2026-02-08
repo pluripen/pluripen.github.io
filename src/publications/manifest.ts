@@ -5,6 +5,8 @@ export type PublicationVolume = {
   series: 'GLM' | 'GPS' | 'GPT' | 'GRP'
   volume: string
   title: string
+  authors?: string
+  year?: number
   coverPdf: string
   abstractDocx: string
   textPdf?: string

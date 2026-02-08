@@ -54,6 +54,8 @@ export function PublicationVolumeAccordion({ volumes }: Props) {
                 {v.title}
               </Text>
               <Text color="blackAlpha.700" fontSize="var(--font-size)" mt={1}>
+                {v.authors ? `${v.authors} · ` : ''}
+                {typeof v.year === 'number' ? `${v.year} · ` : ''}
                 Band {v.volume}
               </Text>
             </Box>
@@ -71,16 +73,44 @@ export function PublicationVolumeAccordion({ volumes }: Props) {
               marginRight={isMobile ? 'var(--page-padding-mobile)' : 'var(--page-padding-right)'}
             >
               <Box flex="1" minW={0} order={isMobile ? 1 : 0}>
-                <Text fontWeight="bold" mb={2}>
-                  Abstract
-                </Text>
-                <DocxViewer docxUrl={v.abstractDocx} showDownloadLink={false} />
+                {v.series === 'GLM' ? (
+                  <>
+                    {/* Reserve the same header-row height as the Cover column so content aligns with the PDF preview */}
+                    <Flex align="baseline" justify="space-between" mb={2} visibility="hidden">
+                      <Text fontWeight="bold" m={0}>
+                        Cover
+                      </Text>
+                      <Text fontSize="var(--font-size)" m={0}>
+                        PDF öffnen
+                      </Text>
+                    </Flex>
+                    <DocxViewer docxUrl={v.abstractDocx} showDownloadLink={false} />
+                  </>
+                ) : (
+                  <>
+                    {/* Reserve the same header-row height as the Cover column so content aligns with the PDF preview */}
+                    <Flex align="baseline" justify="space-between" mb={2} visibility="hidden">
+                      <Text fontWeight="bold" m={0}>
+                        Cover
+                      </Text>
+                      <Text fontSize="var(--font-size)" m={0}>
+                        PDF öffnen
+                      </Text>
+                    </Flex>
+                    <DocxViewer docxUrl={v.abstractDocx} showDownloadLink={false} />
+                  </>
+                )}
               </Box>
 
               <Box flex="0 0 360px" maxW="100%" order={isMobile ? 0 : 1}>
-                <Text fontWeight="bold" mb={2}>
-                  Cover
-                </Text>
+                <Flex align="baseline" justify="space-between" mb={2}>
+                  <Text fontWeight="bold" m={0}>
+                    Cover
+                  </Text>
+                  <Link href={v.coverPdf} isExternal color="var(--romani-blue)" fontSize="var(--font-size)">
+                    PDF öffnen
+                  </Link>
+                </Flex>
                 <Box width="100%" height={isMobile ? '320px' : '380px'} position="relative">
                   <iframe
                     title={`Cover ${v.id}`}
@@ -95,11 +125,6 @@ export function PublicationVolumeAccordion({ volumes }: Props) {
                     inset={0}
                     _hover={{ textDecoration: 'none' }}
                   />
-                </Box>
-                <Box mt={3}>
-                  <Link href={v.coverPdf} isExternal color="var(--romani-blue)">
-                    Cover (PDF) öffnen
-                  </Link>
                 </Box>
                 <Box mt={6}>
                   <Text fontWeight="bold" mb={2}>

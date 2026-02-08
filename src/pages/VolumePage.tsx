@@ -40,12 +40,22 @@ export function VolumePage() {
         marginBottom={isMobile ? 3 : 4}
         gap={isMobile ? 1 : 6}
       >
-        <Text fontSize={isMobile ? '22px' : '28px'} lineHeight="1.15" m={0}>
-          {volume.title}
-        </Text>
-        <Text fontSize={isMobile ? '22px' : '28px'} lineHeight="1.15" m={0} color="blackAlpha.700">
-          {series.shortName} · Band {volume.volume}
-        </Text>
+        <Box>
+          <Text fontSize={isMobile ? '22px' : '28px'} lineHeight="1.15" m={0}>
+            {volume.title}
+          </Text>
+          {(volume.authors || typeof volume.year === 'number') && (
+            <Text fontSize="var(--font-size)" color="blackAlpha.700" mt={1} mb={0}>
+              {volume.authors ? `${volume.authors} · ` : ''}
+              {typeof volume.year === 'number' ? `${volume.year}` : ''}
+            </Text>
+          )}
+        </Box>
+        {!isMobile ? (
+          <Text fontSize="28px" lineHeight="1.15" m={0} color="blackAlpha.700">
+            {series.shortName} · Band {volume.volume}
+          </Text>
+        ) : null}
       </Flex>
 
       <Box
@@ -58,24 +68,26 @@ export function VolumePage() {
             <Text fontWeight="bold" mb={2}>
               Abstract
             </Text>
-            <DocxViewer docxUrl={volume.abstractDocx} showDownloadLink={false} />
+            <Box mt={2}>
+              <DocxViewer docxUrl={volume.abstractDocx} showDownloadLink={false} />
+            </Box>
           </Box>
 
           <Box flex="0 0 520px" maxW="100%" order={isMobile ? 0 : 1}>
-            <Text fontWeight="bold" mb={2}>
-              Cover
-            </Text>
+            <Flex align="baseline" justify="space-between" mb={2}>
+              <Text fontWeight="bold" m={0}>
+                Cover
+              </Text>
+              <Link href={volume.coverPdf} isExternal color="var(--romani-blue)" fontSize="var(--font-size)">
+                PDF öffnen
+              </Link>
+            </Flex>
             <Box width="100%" height={isMobile ? '520px' : '680px'}>
               <iframe
                 title={`Cover ${volume.id}`}
                 src={`${volume.coverPdf}#view=FitH`}
                 style={{ border: '0', width: '100%', height: '100%' }}
               />
-            </Box>
-            <Box mt={3}>
-              <Link href={volume.coverPdf} isExternal color="var(--romani-blue)">
-                Cover (PDF) öffnen
-              </Link>
             </Box>
             <Box mt={6}>
               <Text fontWeight="bold" mb={2}>
