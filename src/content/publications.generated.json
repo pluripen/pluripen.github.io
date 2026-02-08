@@ -1,0 +1,521 @@
+{
+  "generatedAt": "2026-02-08T13:32:40.672Z",
+  "volumes": [
+    {
+      "id": "GLM_43",
+      "series": "GLM",
+      "volume": "43",
+      "title": "GLM 43",
+      "coverPdf": "/assets/GLM/GLM_43/GLM_43_titel.pdf",
+      "abstractDocx": "/assets/GLM/GLM_43/GLM_43_abstract.docx",
+      "textPdf": "/assets/GLM/GLM_43/GLM_43_text.pdf"
+    },
+    {
+      "id": "GLM_42",
+      "series": "GLM",
+      "volume": "42",
+      "title": "GLM 42",
+      "coverPdf": "/assets/GLM/GLM_42/GLM_42_titel.pdf",
+      "abstractDocx": "/assets/GLM/GLM_42/GLM_42_abstract.docx",
+      "textPdf": "/assets/GLM/GLM_42/GLM_42_text.pdf"
+    },
+    {
+      "id": "GLM_41",
+      "series": "GLM",
+      "volume": "41",
+      "title": "GLM 41",
+      "coverPdf": "/assets/GLM/GLM_41/GLM_41_titel.pdf",
+      "abstractDocx": "/assets/GLM/GLM_41/GLM_41_abstract.docx",
+      "textPdf": "/assets/GLM/GLM_41/GLM_41_text.pdf"
+    },
+    {
+      "id": "GLM_40",
+      "series": "GLM",
+      "volume": "40",
+      "title": "GLM 40",
+      "coverPdf": "/assets/GLM/GLM_40/GLM_40_titel.pdf",
+      "abstractDocx": "/assets/GLM/GLM_40/GLM_40_abstract.docx",
+      "textPdf": "/assets/GLM/GLM_40/GLM_40_text.pdf"
+    },
+    {
+      "id": "GLM_39",
+      "series": "GLM",
+      "volume": "39",
+      "title": "GLM 39",
+      "coverPdf": "/assets/GLM/GLM_39/GLM_39_titel.pdf",
+      "abstractDocx": "/assets/GLM/GLM_39/GLM_39_abstract.docx",
+      "textPdf": "/assets/GLM/GLM_39/GLM_39_text.pdf"
+    },
+    {
+      "id": "GLM_38",
+      "series": "GLM",
+      "volume": "38",
+      "title": "GLM 38",
+      "coverPdf": "/assets/GLM/GLM_38/GLM_38_titel.pdf",
+      "abstractDocx": "/assets/GLM/GLM_38/GLM_38_abstract.docx",
+      "textPdf": "/assets/GLM/GLM_38/GLM_38_text.pdf"
+    },
+    {
+      "id": "GLM_37",
+      "series": "GLM",
+      "volume": "37",
+      "title": "GLM 37",
+      "coverPdf": "/assets/GLM/GLM_37/GLM_37_titel.pdf",
+      "abstractDocx": "/assets/GLM/GLM_37/GLM_37_abstract.docx",
+      "textPdf": "/assets/GLM/GLM_37/GLM_37_text.pdf"
+    },
+    {
+      "id": "GLM_36",
+      "series": "GLM",
+      "volume": "36",
+      "title": "GLM 36",
+      "coverPdf": "/assets/GLM/GLM_36/GLM_36_titel.pdf",
+      "abstractDocx": "/assets/GLM/GLM_36/GLM_36_abstract.docx",
+      "textPdf": "/assets/GLM/GLM_36/GLM_36_text.pdf"
+    },
+    {
+      "id": "GLM_35",
+      "series": "GLM",
+      "volume": "35",
+      "title": "GLM 35",
+      "coverPdf": "/assets/GLM/GLM_35/GLM_35_titel.pdf",
+      "abstractDocx": "/assets/GLM/GLM_35/GLM_35_abstract.docx",
+      "textPdf": "/assets/GLM/GLM_35/GLM_35_text.pdf"
+    },
+    {
+      "id": "GLM_34",
+      "series": "GLM",
+      "volume": "34",
+      "title": "GLM 34",
+      "coverPdf": "/assets/GLM/GLM_34/GLM_34_titel.pdf",
+      "abstractDocx": "/assets/GLM/GLM_34/GLM_34_abstract.docx",
+      "textPdf": "/assets/GLM/GLM_34/GLM_34_text.pdf"
+    },
+    {
+      "id": "GLM_33",
+      "series": "GLM",
+      "volume": "33",
+      "title": "GLM 33",
+      "coverPdf": "/assets/GLM/GLM_33/GLM_33_titel.pdf",
+      "abstractDocx": "/assets/GLM/GLM_33/GLM_33_abstract.docx",
+      "textPdf": "/assets/GLM/GLM_33/GLM_33_text.pdf"
+    },
+    {
+      "id": "GLM_32",
+      "series": "GLM",
+      "volume": "32",
+      "title": "GLM 32",
+      "coverPdf": "/assets/GLM/GLM_32/GLM_32_titel.pdf",
+      "abstractDocx": "/assets/GLM/GLM_32/GLM_32_abstract.docx",
+      "textPdf": "/assets/GLM/GLM_32/GLM_32_text.pdf"
+    },
+    {
+      "id": "GLM_31",
+      "series": "GLM",
+      "volume": "31",
+      "title": "GLM 31",
+      "coverPdf": "/assets/GLM/GLM_31/GLM_31_titel.pdf",
+      "abstractDocx": "/assets/GLM/GLM_31/GLM_31_abstract.docx",
+      "textPdf": "/assets/GLM/GLM_31/GLM_31_text.pdf"
+    },
+    {
+      "id": "GLM_30",
+      "series": "GLM",
+      "volume": "30",
+      "title": "GLM 30",
+      "coverPdf": "/assets/GLM/GLM_30/GLM_30_titel.pdf",
+      "abstractDocx": "/assets/GLM/GLM_30/GLM_30_abstract.docx",
+      "textPdf": "/assets/GLM/GLM_30/GLM_30_text.pdf"
+    },
+    {
+      "id": "GLM_29",
+      "series": "GLM",
+      "volume": "29",
+      "title": "GLM 29",
+      "coverPdf": "/assets/GLM/GLM_29/GLM_29_titel.pdf",
+      "abstractDocx": "/assets/GLM/GLM_29/GLM_29_abstract.docx",
+      "textPdf": "/assets/GLM/GLM_29/GLM_29_text.pdf"
+    },
+    {
+      "id": "GLM_28",
+      "series": "GLM",
+      "volume": "28",
+      "title": "GLM 28",
+      "coverPdf": "/assets/GLM/GLM_28/GLM_28_titel.pdf",
+      "abstractDocx": "/assets/GLM/GLM_28/GLM_28_abstract.docx",
+      "textPdf": "/assets/GLM/GLM_28/GLM_28_text.pdf"
+    },
+    {
+      "id": "GLM_27",
+      "series": "GLM",
+      "volume": "27",
+      "title": "GLM 27",
+      "coverPdf": "/assets/GLM/GLM_27/GLM_27_titel.pdf",
+      "abstractDocx": "/assets/GLM/GLM_27/GLM_27_abstract.docx",
+      "textPdf": "/assets/GLM/GLM_27/GLM_27_text.pdf"
+    },
+    {
+      "id": "GLM_26",
+      "series": "GLM",
+      "volume": "26",
+      "title": "GLM 26",
+      "coverPdf": "/assets/GLM/GLM_26/GLM_26_titel.pdf",
+      "abstractDocx": "/assets/GLM/GLM_26/GLM_26_abstract.docx",
+      "textPdf": "/assets/GLM/GLM_26/GLM_26_text.pdf"
+    },
+    {
+      "id": "GLM_25",
+      "series": "GLM",
+      "volume": "25",
+      "title": "GLM 25",
+      "coverPdf": "/assets/GLM/GLM_25/GLM_25_titel.pdf",
+      "abstractDocx": "/assets/GLM/GLM_25/GLM_25_abstract.docx",
+      "textPdf": "/assets/GLM/GLM_25/GLM_25_text.pdf"
+    },
+    {
+      "id": "GLM_24",
+      "series": "GLM",
+      "volume": "24",
+      "title": "GLM 24",
+      "coverPdf": "/assets/GLM/GLM_24/GLM_24_titel.pdf",
+      "abstractDocx": "/assets/GLM/GLM_24/GLM_24_abstract.docx",
+      "textPdf": "/assets/GLM/GLM_24/GLM_24_text.pdf"
+    },
+    {
+      "id": "GLM_23",
+      "series": "GLM",
+      "volume": "23",
+      "title": "GLM 23",
+      "coverPdf": "/assets/GLM/GLM_23/GLM_23_titel.pdf",
+      "abstractDocx": "/assets/GLM/GLM_23/GLM_23_abstract.docx",
+      "textPdf": "/assets/GLM/GLM_23/GLM_23_text.pdf"
+    },
+    {
+      "id": "GLM_22",
+      "series": "GLM",
+      "volume": "22",
+      "title": "GLM 22",
+      "coverPdf": "/assets/GLM/GLM_22/GLM_22_titel.pdf",
+      "abstractDocx": "/assets/GLM/GLM_22/GLM_22_abstract.docx",
+      "textPdf": "/assets/GLM/GLM_22/GLM_22_text.pdf"
+    },
+    {
+      "id": "GLM_21",
+      "series": "GLM",
+      "volume": "21",
+      "title": "GLM 21",
+      "coverPdf": "/assets/GLM/GLM_21/GLM_21_titel.pdf",
+      "abstractDocx": "/assets/GLM/GLM_21/GLM_21_abstract.docx",
+      "textPdf": "/assets/GLM/GLM_21/GLM_21_text.pdf"
+    },
+    {
+      "id": "GLM_20",
+      "series": "GLM",
+      "volume": "20",
+      "title": "GLM 20",
+      "coverPdf": "/assets/GLM/GLM_20/GLM_20_titel.pdf",
+      "abstractDocx": "/assets/GLM/GLM_20/DGLM_20_abstract.docx",
+      "textPdf": "/assets/GLM/GLM_20/GLM_20_text.pdf"
+    },
+    {
+      "id": "GLM_19",
+      "series": "GLM",
+      "volume": "19",
+      "title": "GLM 19",
+      "coverPdf": "/assets/GLM/GLM_19/GLM_19_titel.pdf",
+      "abstractDocx": "/assets/GLM/GLM_19/GLM_19_abstract.docx",
+      "textPdf": "/assets/GLM/GLM_19/GLM_19_text.pdf"
+    },
+    {
+      "id": "GLM_18",
+      "series": "GLM",
+      "volume": "18",
+      "title": "GLM 18",
+      "coverPdf": "/assets/GLM/GLM_18/GLM_18_titel.pdf",
+      "abstractDocx": "/assets/GLM/GLM_18/GLM_18_abstract.docx",
+      "textPdf": "/assets/GLM/GLM_18/GLM_18_text.pdf"
+    },
+    {
+      "id": "GLM_17",
+      "series": "GLM",
+      "volume": "17",
+      "title": "GLM 17",
+      "coverPdf": "/assets/GLM/GLM_17/GLM_17_titel.pdf",
+      "abstractDocx": "/assets/GLM/GLM_17/GLM_17_abstract.docx"
+    },
+    {
+      "id": "GLM_16",
+      "series": "GLM",
+      "volume": "16",
+      "title": "GLM 16",
+      "coverPdf": "/assets/GLM/GLM_16/GLM_16_titel.pdf",
+      "abstractDocx": "/assets/GLM/GLM_16/GLM_16_abstract.docx",
+      "textPdf": "/assets/GLM/GLM_16/GLM_16_text.pdf"
+    },
+    {
+      "id": "GLM_14-15",
+      "series": "GLM",
+      "volume": "14-15",
+      "title": "GLM 14-15",
+      "coverPdf": "/assets/GLM/GLM_14-15/GLM_14-15_titel.pdf",
+      "abstractDocx": "/assets/GLM/GLM_14-15/GLM_14-15_abstract.docx"
+    },
+    {
+      "id": "GLM_13",
+      "series": "GLM",
+      "volume": "13",
+      "title": "GLM 13",
+      "coverPdf": "/assets/GLM/GLM_13/GLM_13_titel.pdf",
+      "abstractDocx": "/assets/GLM/GLM_13/GLM_13_abstract.docx"
+    },
+    {
+      "id": "GLM_12",
+      "series": "GLM",
+      "volume": "12",
+      "title": "GLM 12",
+      "coverPdf": "/assets/GLM/GLM_12/GLM_12_titel.pdf",
+      "abstractDocx": "/assets/GLM/GLM_12/GLM_12_abstract.docx"
+    },
+    {
+      "id": "GLM_11",
+      "series": "GLM",
+      "volume": "11",
+      "title": "GLM 11",
+      "coverPdf": "/assets/GLM/GLM_11/GLM_11_titel.pdf",
+      "abstractDocx": "/assets/GLM/GLM_11/GLM_11_abstract.docx"
+    },
+    {
+      "id": "GLM_10",
+      "series": "GLM",
+      "volume": "10",
+      "title": "GLM 10",
+      "coverPdf": "/assets/GLM/GLM_10/GLM_10_titel.pdf",
+      "abstractDocx": "/assets/GLM/GLM_10/GLM_10_abstract.docx"
+    },
+    {
+      "id": "GLM_09",
+      "series": "GLM",
+      "volume": "09",
+      "title": "GLM 09",
+      "coverPdf": "/assets/GLM/GLM_09/GLM_09_titel.pdf",
+      "abstractDocx": "/assets/GLM/GLM_09/GLM_09_abstract.docx"
+    },
+    {
+      "id": "GLM_08",
+      "series": "GLM",
+      "volume": "08",
+      "title": "GLM 08",
+      "coverPdf": "/assets/GLM/GLM_08/GLM_08_titel.pdf",
+      "abstractDocx": "/assets/GLM/GLM_08/GLM_08_abstract.docx"
+    },
+    {
+      "id": "GLM_07",
+      "series": "GLM",
+      "volume": "07",
+      "title": "GLM 07",
+      "coverPdf": "/assets/GLM/GLM_07/GLM_07_titel.pdf",
+      "abstractDocx": "/assets/GLM/GLM_07/GLM_07_abstract.docx"
+    },
+    {
+      "id": "GLM_06",
+      "series": "GLM",
+      "volume": "06",
+      "title": "GLM 06",
+      "coverPdf": "/assets/GLM/GLM_06/GLM_06_titel.pdf",
+      "abstractDocx": "/assets/GLM/GLM_06/GLM_06_abstract.docx"
+    },
+    {
+      "id": "GLM_05",
+      "series": "GLM",
+      "volume": "05",
+      "title": "GLM 05",
+      "coverPdf": "/assets/GLM/GLM_05/GLM_05_titel.pdf",
+      "abstractDocx": "/assets/GLM/GLM_05/GLM_05_abstract.docx"
+    },
+    {
+      "id": "GLM_04",
+      "series": "GLM",
+      "volume": "04",
+      "title": "GLM 04",
+      "coverPdf": "/assets/GLM/GLM_04/GLM_04_titel.pdf",
+      "abstractDocx": "/assets/GLM/GLM_04/GLM_04_abstract.docx"
+    },
+    {
+      "id": "GLM_03",
+      "series": "GLM",
+      "volume": "03",
+      "title": "GLM 03",
+      "coverPdf": "/assets/GLM/GLM_03/GLM_03_titel.pdf",
+      "abstractDocx": "/assets/GLM/GLM_03/GLM_03_abstract.docx"
+    },
+    {
+      "id": "GLM_02",
+      "series": "GLM",
+      "volume": "02",
+      "title": "GLM 02",
+      "coverPdf": "/assets/GLM/GLM_02/GLM_02_titel.pdf",
+      "abstractDocx": "/assets/GLM/GLM_02/GLM_02_abstract.docx"
+    },
+    {
+      "id": "GLM_01",
+      "series": "GLM",
+      "volume": "01",
+      "title": "GLM 01",
+      "coverPdf": "/assets/GLM/GLM_01/GLM_01_titel.pdf",
+      "abstractDocx": "/assets/GLM/GLM_01/GLM_01_abstract.docx"
+    },
+    {
+      "id": "GPS_06",
+      "series": "GPS",
+      "volume": "06",
+      "title": "GPS 06",
+      "coverPdf": "/assets/GPS/GPS_06/GPS_06_titel.pdf",
+      "abstractDocx": "/assets/GPS/GPS_06/GPS_06_abstract.docx",
+      "textPdf": "/assets/GPS/GPS_06/GPS_06_kern.pdf"
+    },
+    {
+      "id": "GPS_05",
+      "series": "GPS",
+      "volume": "05",
+      "title": "GPS 05",
+      "coverPdf": "/assets/GPS/GPS_05/GPS_05_titel.pdf",
+      "abstractDocx": "/assets/GPS/GPS_05/GPS_05_abstract.docx",
+      "textPdf": "/assets/GPS/GPS_05/GPS_05_text.pdf"
+    },
+    {
+      "id": "GPS_04",
+      "series": "GPS",
+      "volume": "04",
+      "title": "GPS 04",
+      "coverPdf": "/assets/GPS/GPS_04/GPS_04_titel.pdf",
+      "abstractDocx": "/assets/GPS/GPS_04/GPS_04_abstract.docx",
+      "textPdf": "/assets/GPS/GPS_04/GPS_04_text.pdf"
+    },
+    {
+      "id": "GPS_03",
+      "series": "GPS",
+      "volume": "03",
+      "title": "GPS 03",
+      "coverPdf": "/assets/GPS/GPS_03/GPS_03_titel.pdf",
+      "abstractDocx": "/assets/GPS/GPS_03/GPS_03_abstract.docx",
+      "textPdf": "/assets/GPS/GPS_03/GPS_03_text.pdf"
+    },
+    {
+      "id": "GPS_02",
+      "series": "GPS",
+      "volume": "02",
+      "title": "GPS 02",
+      "coverPdf": "/assets/GPS/GPS_02/GPS_02_titel.pdf",
+      "abstractDocx": "/assets/GPS/GPS_02/GPS_02_abstract.docx",
+      "textPdf": "/assets/GPS/GPS_02/GPS_02_text.pdf"
+    },
+    {
+      "id": "GPS_01",
+      "series": "GPS",
+      "volume": "01",
+      "title": "GPS 01",
+      "coverPdf": "/assets/GPS/GPS_01/GPS_01_titel.pdf",
+      "abstractDocx": "/assets/GPS/GPS_01/GPS_01_abstract.docx",
+      "textPdf": "/assets/GPS/GPS_01/GPS_01_text.pdf"
+    },
+    {
+      "id": "GPT_03",
+      "series": "GPT",
+      "volume": "03",
+      "title": "GPT 03",
+      "coverPdf": "/assets/GPT/GPT_03/GPT_03_titel.pdf",
+      "abstractDocx": "/assets/GPT/GPT_03/GPT_03_abstract.docx",
+      "textPdf": "/assets/GPT/GPT_03/GPT_03_text.pdf"
+    },
+    {
+      "id": "GPT_02",
+      "series": "GPT",
+      "volume": "02",
+      "title": "GPT 02",
+      "coverPdf": "/assets/GPT/GPT_02/GPT_02_titel.pdf",
+      "abstractDocx": "/assets/GPT/GPT_02/GPT_02_abstract.docx",
+      "textPdf": "/assets/GPT/GPT_02/GPT_02_text.pdf"
+    },
+    {
+      "id": "GPT_01",
+      "series": "GPT",
+      "volume": "01",
+      "title": "GPT 01",
+      "coverPdf": "/assets/GPT/GPT_01/GPT_01_titel.pdf",
+      "abstractDocx": "/assets/GPT/GPT_01/GPT_01_abstract.docx",
+      "textPdf": "/assets/GPT/GPT_01/GPT_01_text.pdf"
+    },
+    {
+      "id": "GRP_08",
+      "series": "GRP",
+      "volume": "08",
+      "title": "GRP 08",
+      "coverPdf": "/assets/GRP/GRP_08/GRP_08_titel.pdf",
+      "abstractDocx": "/assets/GRP/GRP_08/GRP_08_abstract.docx",
+      "textPdf": "/assets/GRP/GRP_08/GRP_08_text.pdf"
+    },
+    {
+      "id": "GRP_07",
+      "series": "GRP",
+      "volume": "07",
+      "title": "GRP 07",
+      "coverPdf": "/assets/GRP/GRP_07/GRP_07_titel.pdf",
+      "abstractDocx": "/assets/GRP/GRP_07/GRP_07_abstract.docx",
+      "textPdf": "/assets/GRP/GRP_07/GRP_07_text.pdf"
+    },
+    {
+      "id": "GRP_06",
+      "series": "GRP",
+      "volume": "06",
+      "title": "GRP 06",
+      "coverPdf": "/assets/GRP/GRP_06/GRP_06_titel.pdf",
+      "abstractDocx": "/assets/GRP/GRP_06/GRP_06_abstract.docx",
+      "textPdf": "/assets/GRP/GRP_06/GRP_06_ktext.pdf"
+    },
+    {
+      "id": "GRP_05",
+      "series": "GRP",
+      "volume": "05",
+      "title": "GRP 05",
+      "coverPdf": "/assets/GRP/GRP_05/GRP_05_titel.pdf",
+      "abstractDocx": "/assets/GRP/GRP_05/GRP_05_abstract.docx",
+      "textPdf": "/assets/GRP/GRP_05/GRP_05_text.pdf"
+    },
+    {
+      "id": "GRP_04",
+      "series": "GRP",
+      "volume": "04",
+      "title": "GRP 04",
+      "coverPdf": "/assets/GRP/GRP_04/GRP_04_titel.pdf",
+      "abstractDocx": "/assets/GRP/GRP_04/GRP_04_abstract.docx",
+      "textPdf": "/assets/GRP/GRP_04/GRP_04_text.pdf"
+    },
+    {
+      "id": "GRP_03",
+      "series": "GRP",
+      "volume": "03",
+      "title": "GRP 03",
+      "coverPdf": "/assets/GRP/GRP_03/GRP_03_titel.pdf",
+      "abstractDocx": "/assets/GRP/GRP_03/GRP_03_abstract.docx",
+      "textPdf": "/assets/GRP/GRP_03/GRP_03_text.pdf"
+    },
+    {
+      "id": "GRP_02",
+      "series": "GRP",
+      "volume": "02",
+      "title": "GRP 02",
+      "coverPdf": "/assets/GRP/GRP_02/GRP_02_titel.pdf",
+      "abstractDocx": "/assets/GRP/GRP_02/GRP_02_abstract.docx",
+      "textPdf": "/assets/GRP/GRP_02/GRP_02_text.pdf"
+    },
+    {
+      "id": "GRP_01",
+      "series": "GRP",
+      "volume": "01",
+      "title": "GRP 01",
+      "coverPdf": "/assets/GRP/GRP_01/GRP_01_titel.pdf",
+      "abstractDocx": "/assets/GRP/GRP_01/GRP_01_abstract.docx",
+      "textPdf": "/assets/GRP/GRP_01/GRP_01_text.pdf"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+html,
+body {
+  font-family: BDOGrotesk, Arial, sans-serif;
+  margin: 0;
+  height: 100%;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Hide scrollbars (Romani-style) */
+::-webkit-scrollbar {
+  display: none;
+}
+
+:root {
+  /* Keep token names identical to Romani for maximum style reuse */
+  --romani-blue: #1b68d2;
+  --romani-grey: #e0e0e0;
+  --section-title-size: 40px;
+  --section-title-size-mobile: 35px;
+  --page-title-size: 60px;
+  --page-title-size-mobile: 50px;
+  --page-padding-left: 40px;
+  --page-padding-right: 40px;
+  --page-padding-bottom: 60px;
+  --page-padding-mobile: 15px;
+  --page-max-width: 900px;
+  --font-size: 15px;
+  --font-size-page-text: 20px;
+  --content-margin-left: 40px;
+  --content-margin-left-mobile: 10px;
+  --accordion-icon-margin-right: 80px;
+  --accordion-icon-margin-right-mobile: 15px;
+  --accordion-icon-size: 40px;
+  --padding-content: 45px;
+  --padding-content-mobile: 5px;
+}
+
