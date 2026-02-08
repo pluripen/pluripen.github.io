@@ -65,12 +65,16 @@ export function VolumePage() {
       >
         <Flex direction={isMobile ? 'column' : 'row'} gap={10} align="flex-start">
           <Box flex="1" minW={0} order={isMobile ? 1 : 0}>
-            <Text fontWeight="bold" mb={2}>
-              Abstract
-            </Text>
-            <Box mt={2}>
-              <DocxViewer docxUrl={volume.abstractDocx} showDownloadLink={false} />
-            </Box>
+            {/* Reserve the same header-row height as the Cover column so content aligns with the PDF preview */}
+            <Flex align="baseline" justify="space-between" mb={2} visibility="hidden">
+              <Text fontWeight="bold" m={0}>
+                Cover
+              </Text>
+              <Text fontSize="var(--font-size)" m={0}>
+                PDF öffnen
+              </Text>
+            </Flex>
+            <DocxViewer docxUrl={volume.abstractDocx} showDownloadLink={false} />
           </Box>
 
           <Box flex="0 0 520px" maxW="100%" order={isMobile ? 0 : 1}>

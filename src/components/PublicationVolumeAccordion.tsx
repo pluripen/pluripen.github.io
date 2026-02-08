@@ -33,8 +33,14 @@ export function PublicationVolumeAccordion({ volumes }: Props) {
 
   return (
     <Accordion allowMultiple width="100%">
-      {volumes.map((v) => (
-        <AccordionItem key={v.id} borderTop="1px solid black" borderBottom="0" borderLeft="0" borderRight="0">
+      {volumes.map((v, idx) => (
+        <AccordionItem
+          key={v.id}
+          borderTop="1px solid black"
+          borderBottom={idx === volumes.length - 1 ? '1px solid black' : '0'}
+          borderLeft="0"
+          borderRight="0"
+        >
           <AccordionButton
             as={Flex}
             direction="row"
@@ -143,7 +149,6 @@ export function PublicationVolumeAccordion({ volumes }: Props) {
           </AccordionPanel>
         </AccordionItem>
       ))}
-      <Box borderTop="1px solid black" />
     </Accordion>
   )
 }
