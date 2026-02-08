@@ -46,10 +46,10 @@ export function ContactPage() {
         paddingBottom="var(--page-padding-bottom)"
       >
         <Link
-          href={`mailto:info@pluripen.org?subject=${subject}&body=${body}`}
+          href={`mailto:dieter.halwachs@icloud.com?subject=${subject}&body=${body}`}
           color="var(--romani-blue)"
         >
-          E-Mail an info@pluripen.org
+          Dieter Halwachs · dieter.halwachs@icloud.com
         </Link>
       </Box>
     </Box>

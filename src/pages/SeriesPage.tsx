@@ -40,6 +40,7 @@ export function SeriesPage() {
         backgroundPosition="center"
         backgroundRepeat="no-repeat"
         py={isMobile ? 6 : 10}
+        sx={{ textShadow: '0 0 10px rgba(255,255,255,0.85)' }}
       >
         <Box
           marginLeft={isMobile ? 'var(--content-margin-left-mobile)' : 'var(--content-margin-left)'}

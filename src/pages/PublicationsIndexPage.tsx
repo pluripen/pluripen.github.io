@@ -1,4 +1,4 @@
-import { Box, Flex, Image, Link, Text, useMediaQuery } from '@chakra-ui/react'
+import { Box, Flex, Link, Text, useMediaQuery } from '@chakra-ui/react'
 import { Link as RouterLink } from 'react-router-dom'
 
 import { publicationsManifest } from '../publications/manifest'
@@ -31,18 +31,16 @@ export function PublicationsIndexPage() {
         Wählen Sie eine Reihe, um die verfügbaren Bände mit Cover, Abstract und Download-Links zu sehen.
       </Text>
 
-      <Flex
-        direction="column"
-        gap={3}
-        borderTop="1px solid black"
-        borderBottom="1px solid black"
-        py={6}
-        px={isMobile ? 'var(--page-padding-mobile)' : 'var(--page-padding-left)'}
-      >
+      <Flex direction="column" borderTop="1px solid black" borderBottom="1px solid black">
         {Object.keys(SERIES).map((key) => {
           const series = SERIES[key as SeriesKey]
-          const count =
+          const countVolumes =
             key === 'PLURIPEN' ? 0 : publicationsManifest.volumes.filter((v) => v.series === key).length
+          const countDownloads =
+            key === 'PLURIPEN'
+              ? 0
+              : publicationsManifest.volumes.filter((v) => v.series === key && Boolean(v.textPdf)).length
+          const isLast = key === Object.keys(SERIES)[Object.keys(SERIES).length - 1]
           return (
             <Link
               key={key}
@@ -51,34 +49,30 @@ export function PublicationsIndexPage() {
               color="black"
               _hover={{ textDecoration: 'none' }}
             >
-              <Flex
-                direction="row"
-                align="center"
-                gap={4}
-                py={2}
-                px={2}
-                borderRadius="6px"
-                _hover={{ background: 'rgba(0, 0, 0, 0.04)' }}
+              <Box
+                backgroundImage={`url(${series.coverImage})`}
+                backgroundSize="cover"
+                backgroundPosition="center"
+                backgroundRepeat="no-repeat"
+                minH={isMobile ? '180px' : '260px'}
+                py={isMobile ? 5 : 7}
+                px={isMobile ? 'var(--page-padding-mobile)' : 'var(--page-padding-left)'}
+                borderBottom={isLast ? '0' : '1px solid black'}
+                transition="filter 180ms ease, transform 180ms ease"
+                _hover={{ filter: 'brightness(0.95)', transform: 'translateY(-1px)' }}
+                sx={{ textShadow: '0 0 10px rgba(255,255,255,0.85)' }}
               >
-                <Box flex="0 0 auto">
-                  <Image
-                    src={series.coverImage}
-                    alt={`${series.shortName} cover`}
-                    width={isMobile ? '110px' : '140px'}
-                    height={isMobile ? '70px' : '88px'}
-                    objectFit="cover"
-                    display="block"
-                  />
-                </Box>
-                <Box minW={0}>
-                  <Text fontSize={isMobile ? '18px' : '22px'} m={0} lineHeight="1.15">
-                    {series.title}
-                  </Text>
-                  <Text fontSize="var(--font-size)" color="blackAlpha.700" m={0} mt={1}>
-                    {series.shortName} · {count} {count === 1 ? 'Band' : 'Bände'}
-                  </Text>
-                </Box>
-              </Flex>
+                <Text fontSize={isMobile ? '22px' : '32px'} m={0} lineHeight="1.15">
+                  {series.title} ({series.shortName})
+                </Text>
+                <Text fontSize={isMobile ? '15px' : '16px'} color="blackAlpha.700" m={0} mt={2}>
+                  {countVolumes} {countVolumes === 1 ? 'Band' : 'Bände'} · {countDownloads}{' '}
+                  {countDownloads === 1 ? 'Download' : 'Downloads'}
+                </Text>
+                <Text fontSize={isMobile ? '14px' : '16px'} m={0} mt={3} maxWidth="900px">
+                  {series.description}
+                </Text>
+              </Box>
             </Link>
           )
         })}
