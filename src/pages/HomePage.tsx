@@ -48,7 +48,7 @@ export function HomePage() {
               _hover={{ textDecoration: 'none' }}
             >
               <Box
-                backgroundImage={`linear-gradient(rgba(0,0,0,0.16), rgba(0,0,0,0.16)), url(${series.coverImage})`}
+                backgroundImage={`url(${series.coverImage})`}
                 backgroundSize="cover"
                 backgroundPosition="center"
                 backgroundRepeat="no-repeat"

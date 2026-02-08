@@ -35,7 +35,7 @@ export function SeriesPage() {
   return (
     <Box>
       <Box
-        backgroundImage={`linear-gradient(rgba(0,0,0,0.22), rgba(0,0,0,0.22)), url(${series.coverImage})`}
+        backgroundImage={`url(${series.coverImage})`}
         backgroundSize="cover"
         backgroundPosition="center"
         backgroundRepeat="no-repeat"
