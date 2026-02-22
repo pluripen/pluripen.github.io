@@ -78,8 +78,7 @@ export function PublicationsIndexPage() {
                     m={0}
                     mt={2}
                   >
-                    {countVolumes} {countVolumes === 1 ? 'Band' : 'Bände'} · {countDownloads}{' '}
-                    {countDownloads === 1 ? 'Download' : 'Downloads'}
+                    {countVolumes} {countVolumes === 1 ? 'Publication' : 'Publications'}
                   </Text>
                   <Text fontSize={isMobile ? '14px' : '16px'} m={0} mt={3} maxWidth="900px" color="white">
                     {series.description}

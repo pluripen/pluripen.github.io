@@ -2,6 +2,7 @@ import { Box, Flex, Link, Text, useMediaQuery } from '@chakra-ui/react'
 import { Link as RouterLink, useParams } from 'react-router-dom'
 
 import { DocxViewer } from '../components/DocxViewer'
+import { PdfCoverFrame } from '../components/PdfCoverFrame'
 import { publicationsManifest } from '../publications/manifest'
 import { SERIES, type SeriesKey } from '../publications/series'
 import { routes } from '../routes'
@@ -86,13 +87,7 @@ export function VolumePage() {
                 PDF öffnen
               </Link>
             </Flex>
-            <Box width="100%" height={isMobile ? '520px' : '680px'}>
-              <iframe
-                title={`Cover ${volume.id}`}
-                src={`${volume.coverPdf}#view=FitH`}
-                style={{ border: '0', width: '100%', height: '100%' }}
-              />
-            </Box>
+            <PdfCoverFrame pdfUrl={volume.coverPdf} title={`Cover ${volume.id}`} />
             <Box mt={6}>
               <Text fontWeight="bold" mb={2}>
                 Download

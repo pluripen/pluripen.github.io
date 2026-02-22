@@ -68,8 +68,7 @@ export function HomePage() {
                     {series.title} ({series.shortName})
                   </Text>
                   <Text fontSize={isMobile ? '15px' : '16px'} color="whiteAlpha.900" m={0} mt={2}>
-                    {countVolumes} {countVolumes === 1 ? 'Band' : 'Bände'} · {countDownloads}{' '}
-                    {countDownloads === 1 ? 'Download' : 'Downloads'}
+                    {countVolumes} {countVolumes === 1 ? 'Publication' : 'Publications'}
                   </Text>
                 </Flex>
               </Box>

@@ -19,35 +19,35 @@ export const SERIES: Record<
 > = {
   GLM: {
     shortName: 'GLM',
-    title: 'Grazer Linguistische Monografien',
+    title: 'Grazer Linguistische Monografien / Graz Linguistic Monographs',
     description:
       'Die Reihe GLM umfasst 34 Bände und 17 Downloads. GLM wird nicht fortgesetzt.',
     coverImage: coverGLM,
   },
   GPS: {
     shortName: 'GPS',
-    title: 'Grazer Plurilingualismus Studien',
+    title: 'Grazer Plurilingualismus Studien / Graz Plurilingualism Studies',
     description:
       'Die Reihe GPS umfasst 6 Bände mit 6 Downloads. Ein weiterer Band ist in Vorbereitung.',
     coverImage: coverGPS,
   },
   GPT: {
     shortName: 'GPT',
-    title: 'Grazer Plurilinguale Texte',
+    title: 'Grazer Plurilinguale Texte / Graz Plurilingual Texts',
     description:
       'Die Reihe GPT umfasst 3 Bände mit 3 Downloads. Weitere Bände sind in Vorbereitung.',
     coverImage: coverGPT,
   },
   GRP: {
     shortName: 'GRP',
-    title: 'Grazer Romani Publikationen',
+    title: 'Grazer Romani Publikationen / Graz Romani Publications',
     description:
       'Die Reihe GRP umfasst 8 Bände mit 8 Downloads. Weitere Bände sind in Vorbereitung.',
     coverImage: coverGRP,
   },
   PLURIPEN: {
     shortName: 'PLURIPEN',
-    title: 'Neue Reihe (in Vorbereitung)',
+    title: 'Neue Reihe (in Vorbereitung) / New series (in preparation)',
     description: 'Die neue Reihe PLURIPEN befindet sich derzeit in Vorbereitung.',
     coverImage: coverPLURIPEN,
   },

@@ -8,7 +8,8 @@ import { SERIES, type SeriesKey } from '../publications/series'
 function volumeSortKey(v: PublicationVolume): number {
   const raw = v.volume || ''
   const m = raw.match(/\d+/)
-  return m ? Number(m[0]) : Number.POSITIVE_INFINITY
+  // Put non-numeric volumes last when sorting desc.
+  return m ? Number(m[0]) : Number.NEGATIVE_INFINITY
 }
 
 export function SeriesPage() {
@@ -28,8 +29,8 @@ export function SeriesPage() {
   const volumes: PublicationVolume[] =
     seriesKey === 'PLURIPEN' ? [] : publicationsManifest.volumes.filter((v) => v.series === seriesKey).slice()
   volumes.sort((a, b) => {
-    const n = volumeSortKey(a) - volumeSortKey(b)
-    return n !== 0 ? n : a.id.localeCompare(b.id)
+    const n = volumeSortKey(b) - volumeSortKey(a)
+    return n !== 0 ? n : b.id.localeCompare(a.id)
   })
 
   return (

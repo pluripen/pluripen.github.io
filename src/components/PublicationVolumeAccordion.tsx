@@ -15,6 +15,7 @@ import { Link as RouterLink } from 'react-router-dom'
 import type { PublicationVolume } from '../publications/manifest'
 import { routes } from '../routes'
 import { DocxViewer } from './DocxViewer'
+import { PdfCoverFrame } from './PdfCoverFrame'
 
 type Props = {
   volumes: PublicationVolume[]
@@ -117,12 +118,8 @@ export function PublicationVolumeAccordion({ volumes }: Props) {
                     PDF öffnen
                   </Link>
                 </Flex>
-                <Box width="100%" height={isMobile ? '320px' : '380px'} position="relative">
-                  <iframe
-                    title={`Cover ${v.id}`}
-                    src={`${v.coverPdf}#view=FitH`}
-                    style={{ border: '0', width: '100%', height: '100%', pointerEvents: 'none' }}
-                  />
+                <Box width="100%" position="relative">
+                  <PdfCoverFrame pdfUrl={v.coverPdf} title={`Cover ${v.id}`} pointerEvents="none" />
                   <Link
                     as={RouterLink}
                     to={routes.volume(v.series, v.id)}
