@@ -10,14 +10,6 @@ export function HomePage() {
 
   return (
     <Box>
-
-      <Text
-        fontSize={isMobile ? 'var(--page-title-size-mobile)' : 'var(--page-title-size)'}
-        marginLeft={isMobile ? 'var(--content-margin-left-mobile)' : 'var(--content-margin-left)'}
-      >
-        PLURIPEN
-      </Text>
-
       <Text
         fontSize={isMobile ? '15px' : '18px'}
         marginLeft={isMobile ? 'var(--content-margin-left-mobile)' : 'var(--content-margin-left)'}
