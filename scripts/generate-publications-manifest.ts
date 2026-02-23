@@ -26,6 +26,11 @@ type Manifest = {
   volumes: PublicationAsset[]
 }
 
+const TITLE_OVERRIDES: Record<string, string> = {
+  'GLM_14-15':
+    'Reden und Schweigen zwischen Spiel und Magie: das ist, vorläufige und vorsichtige Prolegomena zu einer Linguistik des Schweigens: Vorabdruck in V Faszikeln: 4 1/2: Be-Merken, Be-Deuten, Ver-Schweigen: fasc II = B, I = C',
+}
+
 function normalizeHeader(s: string) {
   return s.toLowerCase().trim().replace(/[^a-z0-9]/g, '')
 }
@@ -198,7 +203,7 @@ async function main() {
       const volumePadded = padVolume(volume)
       const id = `${series}_${volumePadded}`
       const meta = resolveTitleFromXlsx(titles, series, volumePadded)
-      const title = meta?.title ?? `${series} ${volumePadded}`
+      const title = TITLE_OVERRIDES[id] ?? meta?.title ?? `${series} ${volumePadded}`
 
       volumes.push({
         id,
