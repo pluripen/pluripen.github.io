@@ -14,6 +14,8 @@ export function HomePage() {
         fontSize={isMobile ? '15px' : '18px'}
         marginLeft={isMobile ? 'var(--content-margin-left-mobile)' : 'var(--content-margin-left)'}
         marginRight={isMobile ? 'var(--page-padding-mobile)' : 'var(--page-padding-right)'}
+        marginTop={isMobile ? 8 : 10}
+        marginBottom={isMobile ? 3 : 4}
         lineHeight="1.4"
       >
         Online Open Access Publications in cooperation with{' '}
