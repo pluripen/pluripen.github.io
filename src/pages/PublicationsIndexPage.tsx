@@ -36,10 +36,6 @@ export function PublicationsIndexPage() {
           const series = SERIES[key as SeriesKey]
           const countVolumes =
             key === 'PLURIPEN' ? 0 : publicationsManifest.volumes.filter((v) => v.series === key).length
-          const countDownloads =
-            key === 'PLURIPEN'
-              ? 0
-              : publicationsManifest.volumes.filter((v) => v.series === key && Boolean(v.textPdf)).length
           const isLast = key === Object.keys(SERIES)[Object.keys(SERIES).length - 1]
           return (
             <Link

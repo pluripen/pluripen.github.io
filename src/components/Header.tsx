@@ -20,7 +20,7 @@ export function Header() {
           </Text>
         </Link>
         <Text fontSize="12px" color="blackAlpha.700" mt={0}>
-          Online Open-Access-Verlag
+          Online Open Access Publications
         </Text>
       </Box>
       <Flex gap={6} fontSize="var(--font-size)">

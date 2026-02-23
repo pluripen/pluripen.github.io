@@ -18,17 +18,24 @@ export function HomePage() {
         PLURIPEN
       </Text>
 
-        <Text
-            fontSize={isMobile ? '15px' : '18px'}
-            marginLeft={isMobile ? 'var(--content-margin-left-mobile)' : 'var(--content-margin-left)'}
-            marginRight={isMobile ? 'var(--page-padding-mobile)' : 'var(--page-padding-right)'}
-            lineHeight="1.4"
+      <Text
+        fontSize={isMobile ? '15px' : '18px'}
+        marginLeft={isMobile ? 'var(--content-margin-left-mobile)' : 'var(--content-margin-left)'}
+        marginRight={isMobile ? 'var(--page-padding-mobile)' : 'var(--page-padding-right)'}
+        lineHeight="1.4"
+      >
+        Online Open Access Publications in cooperation with{' '}
+        <Link
+          href="https://akademie-graz.at/"
+          isExternal
+          color="var(--romani-blue)"
+          textDecoration="underline"
+          _hover={{ textDecoration: 'underline' }}
         >
-            PLURIPEN ist ein Online-Open-Access-Verlag in Kooperation mit der Akademie Graz.{' '}
-            <Link as={RouterLink} to={routes.publications} color="var(--romani-blue)" _hover={{ textDecoration: 'none' }}>
-                Zu den Publikationen
-            </Link>
-        </Text>
+          Akademie Graz
+        </Link>
+        .
+      </Text>
 
       {/* Simple vertical series list (natural scroll down) */}
       <Flex direction="column" borderTop="1px solid black" borderBottom="1px solid black" mt={6}>
@@ -36,10 +43,6 @@ export function HomePage() {
           const series = SERIES[key]
           const isLast = key === 'PLURIPEN'
           const countVolumes = key === 'PLURIPEN' ? 0 : publicationsManifest.volumes.filter((v) => v.series === key).length
-          const countDownloads =
-            key === 'PLURIPEN'
-              ? 0
-              : publicationsManifest.volumes.filter((v) => v.series === key && Boolean(v.textPdf)).length
           return (
             <Link
               key={key}

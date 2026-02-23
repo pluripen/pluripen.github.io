@@ -12,7 +12,7 @@ export function MobileHeader() {
         </Text>
       </Link>
       <Text fontSize="var(--font-size)" color="blackAlpha.700" mt={1}>
-        Online Open-Access-Verlag
+        Online Open Access Publications
       </Text>
     </Flex>
   )
