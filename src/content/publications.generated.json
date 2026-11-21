@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-23T16:38:34.384Z",
+  "generatedAt": "2026-11-21T14:10:03.088Z",
   "volumes": [
     {
       "id": "GLM_43",
@@ -509,6 +509,17 @@
       "coverPdf": "assets/GPS/GPS_01/GPS_01_titel.pdf",
       "abstractDocx": "assets/GPS/GPS_01/GPS_01_abstract.docx",
       "textPdf": "assets/GPS/GPS_01/GPS_01_text.pdf"
+    },
+    {
+      "id": "GPT_04",
+      "series": "GPT",
+      "volume": "04",
+      "title": "Sanıka Lazekê Nêçari – Neçaroğlu Masalı – Das Märchen vom Sohn des Neçar – The Fairy Tale of the Son of Neçar",
+      "authors": "Arslan, Mehmet / Zeynep Arslan",
+      "year": 2026,
+      "coverPdf": "assets/GPT/GPT_04/GPT_04_titel.pdf",
+      "abstractDocx": "assets/GPT/GPT_04/GPT_04_abstract.docx",
+      "textPdf": "assets/GPT/GPT_04/GPT_04_text.pdf"
     },
     {
       "id": "GPT_03",
